@@ -1,0 +1,9 @@
+
+<%if request_status(user.id)=="accepted"%>
+  <%= button_to "Un follow the user", send_request_path,params:{user_id:user.id}, remote: true, method: :post%>
+  <%= button_to "view", user_path(user.id), method: :get%>
+<% elsif request_status(user.id)=="pending"%> 
+  <%= button_to "Your request id panding.Click to un follow", send_request_path,params:{user_id:user.id}, remote: true, method: :post %> 
+<% else%>
+  <%= button_to "Send request", send_request_path,params:{user_id:user.id}, remote: true, method: :post %> 
+<% end %>

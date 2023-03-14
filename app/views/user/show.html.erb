@@ -1,0 +1,15 @@
+<% if user_signed_in?%>
+    <div class="container">
+      <div class="row">
+        <div class="col-6 ">
+          <%= render partial: 'show', collection: @posts, as: :post %>
+        </div>    
+     <%== pagy_nav(@pagy)%>
+    </div>
+<% else %>
+  <div class="container">
+   <div class="row">
+    <h1>kindly sign in </h1>
+   </div>    
+  </div>
+<% end %>    

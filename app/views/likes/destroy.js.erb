@@ -1,0 +1,7 @@
+<% if defined?(error) %>
+    alert("<%= error %>");
+<% else %>
+    $("#post<%=@post.id%>").html("likes <%=@likes_count%> ");
+    $("#post-likes<%=@post.id%>").empty().append("<%= escape_javascript(render partial:'likes/likes', locals: {post: @post}) %>")
+<% end %>
+

@@ -1,0 +1,11 @@
+
+<% if post_like?(post.id) %>
+  <%= form_with(model: @like, url: like_path(like_id(post.id)), method: :delete) do |form| %>  
+    <%=form.submit "unlike" %>
+  <% end %>
+<% else %>
+  <%= form_with(model: @like, url: post_likes_path(post.id)) do |form| %>
+    <p><%=form.submit "like" %></p>
+  <% end %>
+<% end %>
+<p><button id=<%=post.id%>  type="button" onclick=comments_show() >Comments</button></p>

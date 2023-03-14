@@ -1,0 +1,5 @@
+<% if local_variables.include?(:error) %>
+    alert("<%= error %>");
+<%else%>
+ $('#post-comments-<%=@comment.post_id%>').append("<%= j render partial:'comments/ajax_comment', locals: { comment: @comment, post: @comment.post } %>");
+<% end %>

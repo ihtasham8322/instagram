@@ -1,0 +1,10 @@
+<div class="comment_area" id="comments_area<%=post.id%>"> 
+  <%= form_with(model: @comment, url: post_comments_path(post.id),remote: true)  do |f| %>
+    <fieldset> 
+      <%= f.hidden_field :post_id, value: post.id %>
+      <%= f.text_area :content , row: 2, cols: 60,
+      placeholder: "Write a comment...", class:'textarea' ,required: true%>
+      <%= f.submit 'Post Comment' ,class: 'button'%>
+    </fieldset> 
+  <%end%> 
+</div>

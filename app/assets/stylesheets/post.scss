@@ -1,0 +1,41 @@
+// Place all the styles related to the Post controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.textarea {
+    width: 98%;
+}
+
+.comment_area {
+    display: none;
+}
+
+.comments {
+    display: none;
+}
+
+.home_image {
+    width: 300px;
+    height: 250px;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+}
+
+.text {
+    text-align: center;
+}
+
+#img img {
+    width: 50px;
+    height: 50px;
+}
+
+.colour {
+    color: #E4E4E4;
+}
+
+.submit_class_name_here {
+    color: black;
+}

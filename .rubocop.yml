@@ -1,0 +1,38 @@
+require: 
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rspec # or rubocop-minitest
+ 
+ 
+AllCops:
+  # Exclude auto-generated files by Rails
+  TargetRubyVersion: 2.7
+  TargetRailsVersion: 5.2
+  Exclude:
+    - 'db/schema.rb'
+    - 'node_modules/**/*'
+    - 'vendor/bundle/**/*'
+    - 'bin/**/*'
+    - 'config/environments/development.rb'
+    - 'config/initializers/devise.rb'
+    
+Metrics/LineLength:
+  Max: 140
+  
+Metrics/MethodLength:
+  Max: 25
+
+Metrics/BlockLength:
+  Exclude:
+    - config/**/*
+    - spec/**/*
+
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - spec/**/*
+
+Style/Documentation:
+  Enabled: false
+
+Rails/NotNullColumn:
+  Enabled: false

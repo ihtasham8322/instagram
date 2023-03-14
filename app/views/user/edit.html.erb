@@ -1,0 +1,4 @@
+<%= form_for @user  do |form| %>
+  <%= form.file_field :image ,accept:".jpg, .jpeg, .png" ,required: true%>
+  <%= form.submit %>
+<% end %>

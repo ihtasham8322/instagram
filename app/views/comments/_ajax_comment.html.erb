@@ -1,0 +1,13 @@
+<div class="commentss<%=comment.id%>" id="commentss<%=comment.id%>">
+  <div>
+    <h5><%=comment.user.firstname%></h5>    
+    <%= comment.content%>
+  <div>
+  <% if current_user.id == post.user.id %>
+    <div class="btn-group comments<%=comment.post_id%>">     
+      <%= link_to 'Delete', [comment],remote: true, method: :delete %> |
+      <%= link_to 'Edit', edit_comment_path(comment),remote: true %> 
+    </div>
+  <% end %>
+</div>
+

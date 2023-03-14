@@ -1,0 +1,31 @@
+<div class="col-6">
+  <div class="container mt-5 d-flex justify-content-center profile">
+    <div class="card p-3">
+      <div class="d-flex align-items-center">
+        <div class="image" >
+          <% if @user.image.attached?%>
+            <%= image_tag url_for(@user.image) %>
+          <% else %>
+            <%= image_tag("empty.png")%>
+          <%end%>
+          <div class="ml-3 w-100">
+            <h4 class="mb-0 mt-0"><%= @user.firstname%></h4> <span><%= @user.email%> </span>
+            <div class="button mt-2 d-flex flex-row align-items-center"> 
+              <button type="button" class="btn btn-sm btn-outline-secondary"> 
+                <%= link_to 'Edit picture', edit_user_path(@user.id) %>
+              </button>
+              <% if @user.public %>
+                <button type="button" class="btn btn-sm btn-outline-secondary"> 
+                  <%= link_to 'Add account to private', account_privacy_path(@user.id) %>
+                </button>
+              <% else %>
+                <button type="button" class="btn btn-sm btn-outline-secondary">
+                  <%= link_to 'Add account to public ', account_privacy_path(@user.id) %> 
+                </button>
+              <% end %>    
+            </div>
+          </div>
+        </div>
+     </div>
+  </div>
+</div>

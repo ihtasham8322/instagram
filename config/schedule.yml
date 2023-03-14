@@ -1,0 +1,4 @@
+delete_stories:
+ cron: "*/1 * * * *"
+ class: "DeleteStoriesJob"
+ queue: "default"

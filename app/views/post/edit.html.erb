@@ -1,0 +1,6 @@
+edit post
+<%= form_for @post do |form| %>
+  <%= form.file_field :images, multiple: true ,accept: ".jpg, .jpeg, .png"%>
+  <%= form.text_field :content,required: true %>
+  <%= form.submit %>
+<% end %>

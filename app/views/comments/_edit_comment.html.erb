@@ -1,0 +1,9 @@
+<div class="edit-comment<%=@comment.id%>">                             
+  <%= form_for(@comment, url: comment_path(@comment.id), remote: true)  do |f| %>
+    <fieldset>   
+      <%= f.text_area :content , row: 2, cols: 60,
+      placeholder: "Write a comment...", class:'textarea' ,required: true%>
+      <%= f.submit 'edit comment' ,class: 'button' %>
+    </fieldset> 
+  <%end%> 
+</div>

@@ -1,0 +1,27 @@
+ <div class="card mb-4 box-shadow">   
+  <div id="img">
+    <% if story.user.image.attached?%>
+      <%= image_tag url_for(story.user.image), class:"rounded-circle z-depth-2", alt:"100x100" %> <%= story.user.firstname%>
+    <% else %>
+      <%= image_tag 'empty',  class:"rounded-circle z-depth-2", alt:"100x100"  %><%= story.user.firstname%>
+    <% end %>
+  </div>
+  <div id="carouselIndicators<%=story.id%>" class="carousel slide" data-interval="false">
+    <ol class="carousel-indicators" >
+      <% story.images.size.times do |i| %>
+       <li data-target="#carouselIndicators<%=story.id%>" data-slide-to="<%= i %>" class="<%= "active" if i.zero? %>"></li>       
+      <% end %>
+    </ol>
+    <div class="carousel-inner">
+      <% story.images.each_with_index do |photo, index| %>
+        <div class="carousel-item <%= "active" if index.zero? %>">
+          <%= image_tag url_for(photo) %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <%= story.content%>
+  <% if story.user_id==current_user.id%>
+    <%= link_to 'Delete', story, confirm: "Are you sure?" ,:method => :delete %>
+  <% end %>  
+</div>  

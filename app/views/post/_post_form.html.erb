@@ -1,0 +1,6 @@
+<%= form_for @post, url: {action: "create"} do |form| %>
+  <%= form.file_field :images, multiple: true, accept:".jpg, .jpeg, .png", required: true %>
+  <%= form.text_field :content ,required: true%>
+  <%= form.submit %>
+<% end %>
+

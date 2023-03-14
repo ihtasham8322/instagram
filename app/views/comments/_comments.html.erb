@@ -1,0 +1,16 @@
+<% post.comments.each do |comment| %>
+  <div class="commentss<%=comment.id%>" id="commentss<%=comment.id%>">
+    <div>
+      <h5><%=comment.user.firstname%></h5>
+      <%= comment.content %>
+    </div>
+    <div class="btn-group " id="comments<%=comment.post_id%>">
+      <% if policy(comment).destroy?%>
+        <%= link_to 'Delete', [comment],remote: true, method: :delete %> |
+      <%end%>
+      <% if policy(comment).edit?%>
+        <%= link_to 'Edit', edit_comment_path(comment), remote: true %>   
+      <%end%>   
+    </div>
+  </div>
+<%end%>

@@ -1,0 +1,7 @@
+<% if defined?(error) %>
+    alert("<%= error %>");
+<%else%>
+    $(".edit-comment<%=@comment.id%>").hide()
+    $("#comments<%=@comment.post_id%>").empty().append('<%= j render 'comments' , post: @comment.post %>')
+    alert("comment updated");
+<%end%>

@@ -1,0 +1,6 @@
+<% if defined?(error) %>
+    alert("<%= error %>");
+<%else%>
+    $('.commentss<%=@comment.id%>').remove();
+    alert("comment is deleted");
+<% end %>

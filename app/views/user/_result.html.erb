@@ -1,0 +1,26 @@
+<%if user.id!=current_user.id%>
+  <div class="col-6">
+    <div class="container mt-5 d-flex justify-content-center profile">
+      <div class="card p-3">
+        <div class="d-flex align-items-center">
+          <div class="image">
+            <% if user.image.attached?%>   
+             <%= image_tag url_for(user.image) %>
+            <% else %>
+              <%= image_tag("empty.png")%>
+            <% end %>
+            <h4 class="mb-0 mt-0">  <%= user.firstname%></h4> <span><%= user.email%> </span>
+            <div class="p-2 mt-2 bg-primary d-flex justify-content-between rounded text-white stats">
+              <div class="d-flex flex-column"> <span class="articles">Articles</span> <span class="number1">38</span> </div>
+              <div class="d-flex flex-column"> <span class="followers">Followers</span> <span class="number2">980</span> </div>
+              <div class="d-flex flex-column"> <span class="rating">Rating</span> <span class="number3">8.9</span> </div>
+            </div>
+            <div class="button mt-2 d-flex flex-row align-items-center" id="status<%=user.id%>"> 
+              <%= render partial: 'request_status', locals: {user: user} %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ <% end %>
